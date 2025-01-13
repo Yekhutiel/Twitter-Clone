@@ -9,6 +9,8 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+app.use(express.json());
+
 // reroute every search to extensions starting with '/api/auth' to 'authroutes
 app.use("/api/auth", authRoutes);
 
