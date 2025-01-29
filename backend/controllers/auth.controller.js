@@ -18,7 +18,7 @@ export const signup = async (req,res) => {
 
         const existingEmail = await User.findOne({email}); 
         if(existingEmail){
-            return res.status(400).json({error: "Emmail already exist"});
+            return res.status(400).json({error: "User already exist"});
         }
 
         // hash password
@@ -33,7 +33,7 @@ export const signup = async (req,res) => {
         })
 
         if(newUser){
-            generateTokenAndSetCookie(newUser._id, res)
+            generateTokenAndSetCookie(newUser._id, res);
             await newUser.save();
 
             res.status(201).json({
@@ -50,6 +50,8 @@ export const signup = async (req,res) => {
             res.status(400).json({error: "Invalid user data"});
         }
     }catch(error) {
+        console.log("Error in signup controller", error.message);
+
         res.status(500).json({error: "Internal Server Error"});
     }
 }

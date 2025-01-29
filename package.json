@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon backend/server.js",
+    "dev": "nodemon backend/server.js",
     "start": "node backend/server.js"
   },
   "author": "Questy Kuti Mbenza",
-  "type":"module",
+  "type": "module",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
