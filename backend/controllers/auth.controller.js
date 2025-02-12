@@ -1,9 +1,14 @@
 import User from '../models/user.model.js';
 import bcrypt from 'bcryptjs/dist/bcrypt.js';
+import {generateTokenAndSetCookie} from '../lib/utils/generateToken.js'
 
 export const signup = async (req,res) => {
     try {
         const {fullName, username, email, password} = req.body;
+
+        console.log(req.body); // Log the entire request body
+        
+        console.log(`Fullname: ${fullName} \nUsername: ${username} \nemail: ${email} \npassword: ${password}`);
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

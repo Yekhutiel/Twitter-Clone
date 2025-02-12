@@ -15,6 +15,8 @@ app.use(express.urlencoded({extended: true}));  // to parse form data
 // reroute every search to extensions starting with '/api/auth' to 'authroutes
 app.use("/api/auth", authRoutes);
 
+
+
 // listen for conncetions on specified port
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
